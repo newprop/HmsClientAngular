@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Create Discharge</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="patientId">Patient ID:</label>
+      <input type="number" class="form-control" id="patientId" name="patientId" [(ngModel)]="model.patientID" required>
+    </div>
+    <div class="form-group">
+      <label for="admissionId">Admission ID:</label>
+      <input type="number" class="form-control" id="admissionId" name="admissionId" [(ngModel)]="model.admissionID" required>
+    </div>
+    <div class="form-group">
+      <label for="dischargeDate">Discharge Date:</label>
+      <input type="datetime-local" class="form-control" id="dischargeDate" name="dischargeDate" [(ngModel)]="model.dischargeDate" required>
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason:</label>
+      <input type="text" class="form-control" id="reason" name="reason" [(ngModel)]="model.reason">
+    </div>
+    <div class="form-group">
+      <label for="dischargeInstructions">Discharge Instructions:</label>
+      <textarea class="form-control" id="dischargeInstructions" name="dischargeInstructions" [(ngModel)]="model.dischargeInstructions"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

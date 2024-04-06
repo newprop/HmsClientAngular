@@ -1,0 +1,30 @@
+<a routerLink="" class="btn btn-success">Add New Discharge</a>
+
+
+<div>
+  <h2>Discharge List</h2>
+  <table class="table table-bordered table-responsive table-hover">
+    <thead>
+      <tr>
+        <th>Discharge Id</th>
+        <th>Patient Name</th>
+        <th>Admission ID</th>
+        <th>Discharge Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let discharge of discharge">
+        <td>{{ discharge.dischargeId }}</td>
+        <td>{{ discharge.patient.name }}</td>
+        <td>{{ discharge.admissionID }}</td>
+        <td>{{ discharge.dischargeDate}}</td>
+
+        <td>
+          <a [routerLink]="['/Edit/edit/', discharge.dischargeId]" class="btn btn-warning">Edit</a>
+          <button (click)="deleteDischage(discharge)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

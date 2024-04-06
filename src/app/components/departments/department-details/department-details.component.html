@@ -1,0 +1,36 @@
+<h2>Department Details</h2>
+
+<span>
+    <strong> Department : {{model.name}} </strong>
+</span>
+
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>DoctorId</th>
+            <th>Name</th>
+            <th>specialization</th>
+            <th>contactNo</th>
+            <th>Email</th>
+            <th>Schedule</th>
+            <th>Shift</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doc of model.doctors">
+            <td>{{doc.doctorId}}</td>
+            <td>{{doc.name}}</td>
+            <td>{{doc.specialization}}</td>
+            <td>{{doc.contactNo}}</td>
+            <td>{{doc.email}}</td>
+            <td>{{doc.schedule}}</td>
+            <td>{{doc.shift}}</td>
+            <td>{{doc.image}}</td>
+
+        </tr>
+    </tbody>
+
+
+</table>

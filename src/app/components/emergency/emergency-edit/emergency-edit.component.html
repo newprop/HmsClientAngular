@@ -1,0 +1,61 @@
+<div>
+  <h2>Edit Emergency</h2>
+  <form (ngSubmit)="OnSubmit()">
+    <div class="form-group">
+      <label for="emergencyId">Emergency ID:</label>
+      <input type="number" id="emergencyId" name="emergencyId" [(ngModel)]="model.emergencyId" disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="patientID">Patient Name:</label>
+      <select id="patientID" name="patientID" class="form-control" required [(ngModel)]="model.patientID" #patID="ngModel">
+        <option *ngFor="let patient of patients" [value]="patient.patientId">{{ patient.name }}</option>
+      </select>
+      <div *ngIf="patID.invalid && (patID.dirty || patID.touched)" class="alert">
+        Select Patient Name.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="depID">Department Name:</label>
+      <select id="depID" name="departmentID" class="form-control" required [(ngModel)]="model.departmentID" #depID="ngModel">
+        <option *ngFor="let dep of departments" [value]="dep.departmentId">{{ dep.name }}</option>
+      </select>
+      <div *ngIf="depID.invalid && (depID.dirty || depID.touched)" class="alert">
+        Select Department Name.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="doctorID">Doctor Name:</label>
+      <select id="doctorID" name="doctorID" class="form-control" required [(ngModel)]="model.doctorID" #docID="ngModel">
+        <option *ngFor="let doctor of doctors" [value]="doctor.doctorId">{{ doctor.name }}</option>
+      </select>
+      <div *ngIf="docID.invalid && (docID.dirty || docID.touched)" class="alert">
+        Select Doctor Name.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" class="form-control" [(ngModel)]="model.location">
+    </div>
+
+    <div class="form-group">
+      <label for="emergencyDateTime">Emergency Date Time:</label>
+      <input type="datetime-local" id="emergencyDateTime" name="emergencyDateTime" class="form-control" [(ngModel)]="model.emergencyDateTime">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" class="form-control" [(ngModel)]="model.description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="severity">Severity:</label>
+      <input type="text" id="severity" name="severity" class="form-control" [(ngModel)]="model.severity">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
